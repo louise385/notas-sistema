@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Notas</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Sistema de Gestión de Notas Académicas</h1>
+
+        <!-- ESTUDIANTES -->
+
+        <section class="card">
+
+            <h2>Registrar Estudiante</h2>
+
+            <form id="studentForm">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Nombre del estudiante"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Correo electrónico"
+                    required
+                >
+
+                <button type="submit">
+                    Guardar Estudiante
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- NOTAS -->
+
+        <section class="card">
+
+            <h2>Registrar Nota</h2>
+
+            <form id="gradeForm">
+
+                <select id="studentSelect" required>
+                    <option value="">
+                        Seleccione un estudiante
+                    </option>
+                </select>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Materia"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="grade"
+                    placeholder="Nota"
+                    min="0"
+                    max="5"
+                    step="0.1"
+                    required
+                >
+
+                <button type="submit">
+                    Guardar Nota
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- LISTA DE ESTUDIANTES -->
+
+        <section class="card">
+
+            <h2>Listado de Estudiantes</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentsTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- LISTA DE NOTAS -->
+
+        <section class="card">
+
+<h2>Listado de Notas</h2>
+
+<div class="filter-container">
+
+    <label for="filterStudent">
+        Filtrar por estudiante:
+    </label>
+
+    <select id="filterStudent">
+        <option value="">
+            Todos los estudiantes
+        </option>
+    </select>
+
+</div>
+
+<div class="average-box">
+    <h3 id="averageDisplay">
+        Promedio General: 0.00
+    </h3>
+</div>
+
+<table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Estudiante</th>
+                        <th>Materia</th>
+                        <th>Nota</th>
+                        <th>Acciones</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="gradesTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
